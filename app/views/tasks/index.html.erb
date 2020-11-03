@@ -1,0 +1,15 @@
+<h1>I love coding, and here are my tasks:</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <%= form_for(task) do |input| %>
+        <li><%= input.check_box :completed %>
+        <%= link_to task.title, "tasks/#{task.id}" %> <br> 
+        <%= task.details %></li>
+    <% end %>
+<% end %>
+</ul>
+
+
+<%= link_to "add a new task", "tasks/new"%>
+
